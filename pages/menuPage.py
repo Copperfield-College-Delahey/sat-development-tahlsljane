@@ -2,24 +2,21 @@
 
 import customtkinter as ctk
 
-class MenuPage(ctk.CTkFrame):
-    def __init__(self, parent, controller=None):
-        super().__init__(parent)
-        self.grid_columnconfigure((0), weight=1)
-        self.grid_rowconfigure((0), weight=1)
-        self.grid_rowconfigure((1), weight=1) 
-
 menu = ctk.CTk()
 menu.title("Menu")
 menu.geometry("1000x700")
 menu.configure(fg_color="#E9F5FF")
 
+menu.grid_columnconfigure((0), weight=1)
+menu.grid_rowconfigure((0), weight=1)
+menu.grid_rowconfigure((1), weight=1) 
+
 # Title & icon
 headingFrame = ctk.CTkFrame(menu, fg_color="#EDF5FB", height=30)
 headingFrame.grid(row=0, column=0, padx=0, pady=0, sticky="nsew")
 
-menuIcon = ctk.CTkLabel(headingFrame, text="|||", font=("Arial", 30), text_color="black")
-menuIcon.place(x=20, y=10)
+menuButton = ctk.CTkButton(headingFrame, text="|||", font=("Arial", 30), text_color="black", fg_color="transparent", hover_color="#D9EDFF")
+menuButton.place(x=0, y=10)
 
 heading = ctk.CTkLabel(headingFrame, text="Menu", font=("Georgia", 32, "bold", "italic", "underline"), text_color="#0D2B50")
 heading.place(relx=0.5, rely=0.5, anchor="center")

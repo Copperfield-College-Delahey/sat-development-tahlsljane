@@ -1,6 +1,5 @@
 import customtkinter as ctk
 from PIL import Image, ImageTk
-#from pages.menuPage import menuPage
 
 app = ctk.CTk()
 app.title("my app")
