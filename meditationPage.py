@@ -3,6 +3,34 @@
 import customtkinter as ctk
 from PIL import Image, ImageTk
 
+class MeditationPage(ctk.CTkFrame):
+    def __init__(self, parent, controller=None):
+        super().__init__(parent)
+
+        # Page content
+        meditationFrame = ctk.CTkFrame(self) 
+        meditationFrame.pack(padx=20, pady=50) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 meditation = ctk.CTk()
 meditation.title("Meditation")
 meditation.geometry("1000x700")
