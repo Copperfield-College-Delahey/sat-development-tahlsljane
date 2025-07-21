@@ -30,9 +30,9 @@ pageFrame.grid_rowconfigure(0, weight=1)
 pageFrame.grid_columnconfigure(0, weight=1)
 # Load page classes
 homePage = HomePage(pageFrame) 
-homePage.grid(row=0, column=0, sticky="nsew") 
+homePage.pack(padx=20, pady=50) 
 menuPage = MenuPage(pageFrame) 
-menuPage.grid(row=0, column=0, sticky="nsew") 
+menuPage.pack(padx=20, pady=50) 
 # Dictionary of pages 
 frames = {
     "HomePage": homePage, 

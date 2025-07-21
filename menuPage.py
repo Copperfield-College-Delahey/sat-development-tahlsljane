@@ -1,12 +1,14 @@
 # Code for the menu page
 
 import customtkinter as ctk
+from homePage import HomePage
+from journalPage import JournalPage
 
 class MenuPage(ctk.CTkFrame):
     def __init__(self, parent, controller=None):
         super().__init__(parent)
 
-        # Content
+        # Content -----------------------------------------------------------------------------
         menuFrame = ctk.CTkFrame(self, fg_color="#D9EDFF") 
         menuFrame.pack(padx=20, pady=50)
         heading = ctk.CTkLabel(menuFrame, text="Menu", font=("Georgia", 32, "bold", "italic", "underline"), text_color="#0D2B50")
@@ -26,6 +28,22 @@ class MenuPage(ctk.CTkFrame):
         lifelinesButton = ctk.CTkButton(menuFrame, text="Lifelines", fg_color="transparent", text_color="black", font=("Georgia", 24, "italic", "underline"), hover_color="#E9F5FF")
         lifelinesButton.pack(expand=True, padx=10, pady=10)
         
+        # Importing Pages -----------------------------------------------------------------------------
+        # Load page classes
+        homePage = HomePage(menuFrame) 
+        homePage.grid(row=0, column=0, sticky="nsew") 
+        # Dictionary of pages 
+        frames = {
+            "HomePage": homePage, 
+        } 
+        # Page-switching function 
+        def showFrame(pageName): 
+            frames[pageName].tkraise() 
+        # Initially show Home Page 
+        showFrame("HomePage")
+        homePage.configure(fg_color="#D9EDFF")
+        # Configure buttons in header to raise the relevant pages 
+        homeButton.configure(command=lambda: showFrame("HomePage")) 
 
 
 
