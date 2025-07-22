@@ -30,14 +30,11 @@ pageFrame.grid_rowconfigure(0, weight=1)
 pageFrame.grid_columnconfigure(0, weight=1)
 # Load page classes
 homePage = HomePage(pageFrame) 
-homePage.pack(padx=20, pady=50) 
 menuPage = MenuPage(pageFrame) 
-menuPage.pack(padx=20, pady=50) 
 # Dictionary of pages 
 frames = {
     "HomePage": homePage, 
     "MenuPage": menuPage
-
 } 
 # Page-switching function 
 def showFrame(pageName): 

@@ -1,9 +1,9 @@
 import customtkinter as ctk
 
-aboutText = (
-   "Here at StudHealth, we care about the wellbeing of \nall students - high school and university.\n"
-   "We believe that all students should have the ability \nto learn how to deal with any kind of stress they \nexperience, and that is our main goal."
-)
+#aboutText = (
+   #"Here at StudHealth, we care about the wellbeing of \nall students - high school and university.\n"
+   #"We believe that all students should have the ability \nto learn how to deal with any kind of stress they \nexperience, and that is our main goal."
+#)
 
 
 class HomePage(ctk.CTkFrame): 
