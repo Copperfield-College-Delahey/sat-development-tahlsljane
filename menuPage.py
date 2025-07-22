@@ -4,6 +4,8 @@ import customtkinter as ctk
 from homePage import HomePage
 from journalPage import JournalPage
 
+
+
 class MenuPage(ctk.CTkFrame):
     def __init__(self, parent, controller=None):
         super().__init__(parent)
@@ -12,7 +14,6 @@ class MenuPage(ctk.CTkFrame):
 
         # Content -----------------------------------------------------------------------------
         menuFrame = ctk.CTkFrame(self, fg_color="#D9EDFF") 
-        #menuPage = MenuPage(container, controller=showFrame)
         menuFrame.pack(padx=20, pady=50)
         heading = ctk.CTkLabel(menuFrame, text="Menu", font=("Georgia", 32, "bold", "italic", "underline"), text_color="#0D2B50")
         heading.pack(expand=True, padx=10, pady=10)

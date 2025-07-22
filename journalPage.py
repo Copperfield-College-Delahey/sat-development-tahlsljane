@@ -18,12 +18,12 @@ class JournalPage(ctk.CTkFrame):
         saveButton = ctk.CTkButton(self, text="💾 Save Entry", command=self.save_entry).pack(pady=5)
         homeButton = ctk.CTkButton(self, text="⬅️ Back to Home", command=lambda: controller.show_frame(HomePage)).pack(pady=10)
 
-    def save_entry(self):
-        content = self.text_entry.get("1.0", "end").strip()
-        if content:
-            with open("journal_entries.txt", "a") as file:
-                file.write(f"{datetime.now()}\n{content}\n\n")
-            self.text_entry.delete("1.0", "end")
+    #def save_entry(self):
+        #content = self.text_entry.get("1.0", "end").strip()
+        #if content:
+            #with open("journal_entries.txt", "a") as file:
+                #file.write(f"{datetime.now()}\n{content}\n\n")
+            #self.text_entry.delete("1.0", "end")
 
 
 
