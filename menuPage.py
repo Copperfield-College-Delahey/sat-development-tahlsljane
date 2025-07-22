@@ -9,7 +9,6 @@ from journalPage import JournalPage
 class MenuPage(ctk.CTkFrame):
     def __init__(self, parent, controller=None):
         super().__init__(parent)
-        self.showFrame = controller
         
 
         # Content -----------------------------------------------------------------------------
