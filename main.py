@@ -1,6 +1,6 @@
 import customtkinter as ctk
 from homePage import HomePage
-from menuPage import MenuPage 
+from journalPage import JournalPage
 
 # Setup ----------------------------------------------------------------------------
 app = ctk.CTk()
@@ -20,8 +20,30 @@ headingFrame = ctk.CTkFrame(app, fg_color="#E9F5FF", height=60)
 headingFrame.grid(row=0, column=0, columnspan=2, padx=0, pady=0, sticky="nsew")
 appTitle = ctk.CTkLabel(headingFrame, text="StudHealth", font=("Georgia", 32, "bold", "italic", "underline"), text_color="#0D2B50")
 appTitle.place(relx=0.5, rely=0.5, anchor="center")
-menuButton = ctk.CTkButton(headingFrame, text="≡", font=("Arial", 50), text_color="black", fg_color="transparent", hover_color="#D9EDFF")
-menuButton.place(x=0, y=0)
+
+# Buttons frame ----------------------
+buttonsFrame = ctk.CTkFrame(app, fg_color="#CCE3F5", height=100)
+buttonsFrame.grid(row=1, column=0, columnspan=2, padx=0, pady=0, sticky="nsew")
+buttonsFrame.grid_rowconfigure((0), weight=1)
+buttonsFrame.grid_columnconfigure((0), weight=1)
+
+homeButton = ctk.CTkButton(buttonsFrame, text="Home", fg_color="transparent", text_color="black", hover_color="#D9EDFF", font=("Georgia", 15, "italic", "underline", "bold"))
+homeButton.pack(side="left", expand=True, padx=10, pady=10)
+
+journalButton = ctk.CTkButton(buttonsFrame, text="Journal", fg_color="transparent", text_color="black", hover_color="#D9EDFF", font=("Georgia", 15, "italic", "underline", "bold"))
+journalButton.pack(side="left", expand=True, padx=10, pady=10)
+
+strategiesButton = ctk.CTkButton(buttonsFrame, text="Strategies", fg_color="transparent", text_color="black", hover_color="#D9EDFF", font=("Georgia", 15, "italic", "underline", "bold"))
+strategiesButton.pack(side="left", expand=True, padx=10, pady=10)
+
+meditationButton = ctk.CTkButton(buttonsFrame, text="Meditation", fg_color="transparent", text_color="black", hover_color="#D9EDFF", font=("Georgia", 15, "italic", "underline", "bold"))
+meditationButton.pack(side="left", expand=True, padx=10, pady=10)
+
+lifelinesButton = ctk.CTkButton(buttonsFrame, text="Lifelines", fg_color="transparent", text_color="black", hover_color="#D9EDFF", font=("Georgia", 15, "italic", "underline", "bold"))
+lifelinesButton.pack(side="left", expand=True, padx=10, pady=10)
+
+helpButton = ctk.CTkButton(buttonsFrame, text="Help & FAQs", fg_color="transparent", text_color="black", hover_color="#D9EDFF", font=("Georgia", 15, "italic", "underline", "bold"))
+helpButton.pack(side="left", expand=True, padx=10, pady=10)
 
 # Main frame ----------------------------------------------------------------------------
 pageFrame = ctk.CTkFrame(app, fg_color="#EDF5FB")
@@ -29,12 +51,12 @@ pageFrame.grid(row=3, column=0, columnspan=2, padx=0, pady=0, sticky="nsew")
 pageFrame.grid_rowconfigure(0, weight=1)
 pageFrame.grid_columnconfigure(0, weight=1)
 # Load page classes
-homePage = HomePage(pageFrame) 
-menuPage = MenuPage(pageFrame) 
+homePage = HomePage(pageFrame)
+journalPage = JournalPage(pageFrame) 
 # Dictionary of pages 
 frames = {
     "HomePage": homePage, 
-    "MenuPage": menuPage
+    "JournalPage": journalPage
 } 
 # Page-switching function 
 def showFrame(pageName): 
@@ -42,9 +64,9 @@ def showFrame(pageName):
 # Initially show Home Page 
 showFrame("HomePage")
 homePage.configure(fg_color="#D9EDFF")
-menuPage.configure(fg_color="#D9EDFF")
 # Configure buttons in header to raise the relevant pages 
-menuButton.configure(command=lambda: showFrame("MenuPage")) 
+journalButton.configure(command=lambda: showFrame("JournalPage")) 
+homeButton.configure(command=lambda: showFrame("HomePage")) 
 
 
 app.mainloop()
