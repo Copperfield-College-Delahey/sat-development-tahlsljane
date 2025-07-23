@@ -1,6 +1,7 @@
 import customtkinter as ctk
 from homePage import HomePage
 from journalPage import JournalPage
+from strategiesPage import StrategiesPage
 
 # Setup ----------------------------------------------------------------------------
 app = ctk.CTk()
@@ -16,13 +17,13 @@ app.grid_rowconfigure((2), weight=1)
 app.grid_rowconfigure((3), weight=1)
 
 # Top frame ----------------------------------------------------------------------------
-headingFrame = ctk.CTkFrame(app, fg_color="#E9F5FF", height=60)
+headingFrame = ctk.CTkFrame(app, fg_color="#E9F5FF", height=30)
 headingFrame.grid(row=0, column=0, columnspan=2, padx=0, pady=0, sticky="nsew")
 appTitle = ctk.CTkLabel(headingFrame, text="StudHealth", font=("Georgia", 32, "bold", "italic", "underline"), text_color="#0D2B50")
 appTitle.place(relx=0.5, rely=0.5, anchor="center")
 
 # Buttons frame ----------------------
-buttonsFrame = ctk.CTkFrame(app, fg_color="#CCE3F5", height=100)
+buttonsFrame = ctk.CTkFrame(app, fg_color="#CCE3F5", height=60)
 buttonsFrame.grid(row=1, column=0, columnspan=2, padx=0, pady=0, sticky="nsew")
 buttonsFrame.grid_rowconfigure((0), weight=1)
 buttonsFrame.grid_columnconfigure((0), weight=1)
@@ -53,10 +54,12 @@ pageFrame.grid_columnconfigure(0, weight=1)
 # Load page classes
 homePage = HomePage(pageFrame)
 journalPage = JournalPage(pageFrame) 
+strategiesPage = StrategiesPage(pageFrame)
 # Dictionary of pages 
 frames = {
     "HomePage": homePage, 
-    "JournalPage": journalPage
+    "JournalPage": journalPage,
+    "StrategiesPage": strategiesPage
 } 
 # Page-switching function 
 def showFrame(pageName): 
@@ -67,6 +70,7 @@ homePage.configure(fg_color="#D9EDFF")
 # Configure buttons in header to raise the relevant pages 
 journalButton.configure(command=lambda: showFrame("JournalPage")) 
 homeButton.configure(command=lambda: showFrame("HomePage")) 
+strategiesButton.configure(command=lambda: showFrame("StrategiesPage"))
 
 
 app.mainloop()
