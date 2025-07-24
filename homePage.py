@@ -10,7 +10,7 @@ class HomePage(ctk.CTkFrame):
     def __init__(self, parent, controller=None): 
         super().__init__(parent) 
         # Page content
-        mainFrame = ctk.CTkFrame(self, fg_color="#D9EDFF") 
+        mainFrame = ctk.CTkFrame(self, fg_color="#EDF5FB") 
         mainFrame.pack(padx=20, pady=50)
         aboutTitle = ctk.CTkLabel(mainFrame, text="About Us", text_color="#0D2B50", font=("Georgia", 24, "bold", "underline", "italic"))
         aboutTitle.pack(pady=10, padx=10)

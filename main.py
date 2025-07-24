@@ -53,8 +53,11 @@ pageFrame.grid_rowconfigure(0, weight=1)
 pageFrame.grid_columnconfigure(0, weight=1)
 # Load page classes
 homePage = HomePage(pageFrame)
-journalPage = JournalPage(pageFrame) 
+homePage.grid(row=0, column=0, sticky="nsew")
+journalPage = JournalPage(pageFrame)
+journalPage.grid(row=0, column=0, sticky="nsew")
 strategiesPage = StrategiesPage(pageFrame)
+strategiesPage.grid(row=0, column=0, sticky="nsew")
 # Dictionary of pages 
 frames = {
     "HomePage": homePage, 
