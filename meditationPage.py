@@ -5,11 +5,13 @@ from PIL import Image, ImageTk
 
 class MeditationPage(ctk.CTkFrame):
     def __init__(self, parent, controller=None):
-        super().__init__(parent)
+        super().__init__(parent, fg_color="#EDF5FB")
 
         # Page content
-        meditationFrame = ctk.CTkFrame(self) 
-        meditationFrame.pack(padx=20, pady=50) 
+        mainFrame = ctk.CTkFrame(self) 
+        mainFrame.pack(padx=20, pady=50) 
+
+        tenMinutes = ctk.CTkButton(mainFrame, text="10 minutes", )
 
 
 

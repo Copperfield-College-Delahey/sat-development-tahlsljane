@@ -2,6 +2,7 @@ import customtkinter as ctk
 from homePage import HomePage
 from journalPage import JournalPage
 from strategiesPage import StrategiesPage
+from lifelinesPage import LifelinesPage
 
 # Setup ----------------------------------------------------------------------------
 app = ctk.CTk()
@@ -10,9 +11,7 @@ app.geometry("1000x700")
 app.configure(fg_color="#E9F5FF")
 
 app.grid_columnconfigure((0), weight=1)
-#app.grid_columnconfigure((1), weight=1)
 app.grid_rowconfigure((0), weight=2)
-#app.grid_rowconfigure((1), weight=4)
 app.grid_rowconfigure((2), weight=1)
 app.grid_rowconfigure((3), weight=1)
 
@@ -21,6 +20,8 @@ headingFrame = ctk.CTkFrame(app, fg_color="#E9F5FF", height=30)
 headingFrame.grid(row=0, column=0, columnspan=2, padx=0, pady=0, sticky="nsew")
 appTitle = ctk.CTkLabel(headingFrame, text="StudHealth", font=("Georgia", 32, "bold", "italic", "underline"), text_color="#0D2B50")
 appTitle.place(relx=0.5, rely=0.5, anchor="center")
+#subtitle = ctk.CTkLabel(headingFrame, text="Mental wellbeing for students", font=("Georgia", 12, "italic"), text_color="#0D2B50")
+#subtitle.place(relx=0.5, rely=0.5, anchor="center")
 
 # Buttons frame ----------------------
 buttonsFrame = ctk.CTkFrame(app, fg_color="#CCE3F5", height=60)
@@ -47,7 +48,7 @@ helpButton = ctk.CTkButton(buttonsFrame, text="Help & FAQs", fg_color="transpare
 helpButton.pack(side="left", expand=True, padx=10, pady=10)
 
 # Main frame ----------------------------------------------------------------------------
-pageFrame = ctk.CTkFrame(app, fg_color="#EDF5FB")
+pageFrame = ctk.CTkFrame(app)
 pageFrame.grid(row=3, column=0, columnspan=2, padx=0, pady=0, sticky="nsew")
 pageFrame.grid_rowconfigure(0, weight=1)
 pageFrame.grid_columnconfigure(0, weight=1)
@@ -58,22 +59,25 @@ journalPage = JournalPage(pageFrame)
 journalPage.grid(row=0, column=0, sticky="nsew")
 strategiesPage = StrategiesPage(pageFrame)
 strategiesPage.grid(row=0, column=0, sticky="nsew")
+lifelinesPage = LifelinesPage(pageFrame)
+lifelinesPage.grid(row=0, column=0, sticky="nsew")
 # Dictionary of pages 
 frames = {
     "HomePage": homePage, 
     "JournalPage": journalPage,
-    "StrategiesPage": strategiesPage
+    "StrategiesPage": strategiesPage,
+    "LifelinesPage": lifelinesPage
 } 
 # Page-switching function 
 def showFrame(pageName): 
     frames[pageName].tkraise() 
 # Initially show Home Page 
 showFrame("HomePage")
-homePage.configure(fg_color="#D9EDFF")
 # Configure buttons in header to raise the relevant pages 
 journalButton.configure(command=lambda: showFrame("JournalPage")) 
 homeButton.configure(command=lambda: showFrame("HomePage")) 
 strategiesButton.configure(command=lambda: showFrame("StrategiesPage"))
+lifelinesButton.configure(command=lambda: showFrame("LifelinesPage"))
 
 
 app.mainloop()
