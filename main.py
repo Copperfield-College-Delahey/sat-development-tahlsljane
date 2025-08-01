@@ -3,6 +3,7 @@ from homePage import HomePage
 from journalPage import JournalPage
 from strategiesPage import StrategiesPage
 from lifelinesPage import LifelinesPage
+from meditationPage import MeditationPage
 
 # Setup ----------------------------------------------------------------------------
 app = ctk.CTk()
@@ -61,12 +62,15 @@ strategiesPage = StrategiesPage(pageFrame)
 strategiesPage.grid(row=0, column=0, sticky="nsew")
 lifelinesPage = LifelinesPage(pageFrame)
 lifelinesPage.grid(row=0, column=0, sticky="nsew")
+meditationPage = MeditationPage(pageFrame)
+meditationPage.grid(row=0, column=0, sticky="nsew")
 # Dictionary of pages 
 frames = {
     "HomePage": homePage, 
     "JournalPage": journalPage,
     "StrategiesPage": strategiesPage,
-    "LifelinesPage": lifelinesPage
+    "LifelinesPage": lifelinesPage,
+    "MeditationPage": meditationPage,
 } 
 # Page-switching function 
 def showFrame(pageName): 
@@ -78,6 +82,7 @@ journalButton.configure(command=lambda: showFrame("JournalPage"))
 homeButton.configure(command=lambda: showFrame("HomePage")) 
 strategiesButton.configure(command=lambda: showFrame("StrategiesPage"))
 lifelinesButton.configure(command=lambda: showFrame("LifelinesPage"))
+meditationButton.configure(command=lambda: showFrame("MeditationPage"))
 
 
 app.mainloop()
