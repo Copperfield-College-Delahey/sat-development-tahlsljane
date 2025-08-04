@@ -10,35 +10,24 @@ class JournalPage(ctk.CTkFrame):
 
         # Journal page grid -----------------------------------------------------------------
         journalFrame = ctk.CTkFrame(self, fg_color="#EDF5FB")
-        journalFrame.grid(row=0, column=0, padx=20, pady=20, sticky="nsew")
-
-        self.grid_rowconfigure(0, weight=1)
-        self.grid_columnconfigure(0, weight=1)
-        self.grid_columnconfigure(1, weight=1)
-
-        journalFrame.grid_rowconfigure(1, weight=1) 
-        journalFrame.grid_columnconfigure(0, weight=1)
-        journalFrame.grid_columnconfigure(1, weight=1)
+        journalFrame.pack(pady=40)
 
         # Journal textbox -----------------------------------------------------------------
         journalLabel = ctk.CTkLabel(journalFrame, text="Journal Entry:", text_color="black", font=("Georgia", 20, "bold", "italic", "underline"))
-        journalLabel.grid(row=0, column=0, columnspan=2, pady=(10, 5), sticky="n")
+        journalLabel.pack(pady=(10, 5))
 
-        self.journalEntry = ctk.CTkTextbox(journalFrame, fg_color="#CCE3F5", text_color="black", font=("Georgia", 15))
-        self.journalEntry.grid(row=1, column=0, columnspan=2, sticky="nsew", padx=10, pady=10)
+        self.journalEntry = ctk.CTkTextbox(journalFrame, fg_color="#CCE3F5", text_color="black", font=("Georgia", 15), width=700, height=300)
+        self.journalEntry.pack(padx=10, pady=10)
 
         # Buttons frame -----------------------------------------------------------------
         buttonsFrame = ctk.CTkFrame(journalFrame, fg_color="#EDF5FB", height=60)
-        buttonsFrame.grid(row=2, column=0, columnspan=2, padx=0, pady=0, sticky="nsew")
-        buttonsFrame.grid_rowconfigure((0), weight=1)
-        buttonsFrame.grid_columnconfigure((0), weight=1)
-        buttonsFrame.grid_columnconfigure((1), weight=1)
+        buttonsFrame.pack(pady=(10, 0))
 
         saveButton = ctk.CTkButton(buttonsFrame, text="Save Entry", font=("Georgia", 18, "bold", "italic", "underline"), command=self.save_entry)
-        saveButton.grid(row=0, column=0)
+        saveButton.pack(side="left", padx=20)
 
         reloadButton = ctk.CTkButton(buttonsFrame, text="Reload Entry", font=("Georgia", 18, "bold", "italic", "underline"), command=self.reload_entry)
-        reloadButton.grid(row=0, column=1)
+        reloadButton.pack(side="left", padx=20)
 
     # Button functions -----------------------------------------------------------------
     
