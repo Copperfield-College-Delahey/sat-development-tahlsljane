@@ -45,8 +45,8 @@ meditationButton.pack(side="left", expand=True, padx=10, pady=10)
 lifelinesButton = ctk.CTkButton(buttonsFrame, text="Lifelines", fg_color="transparent", text_color="black", hover_color="#D9EDFF", font=("Georgia", 15, "italic", "underline", "bold"))
 lifelinesButton.pack(side="left", expand=True, padx=10, pady=10)
 
-helpButton = ctk.CTkButton(buttonsFrame, text="Help & FAQs", fg_color="transparent", text_color="black", hover_color="#D9EDFF", font=("Georgia", 15, "italic", "underline", "bold"))
-helpButton.pack(side="left", expand=True, padx=10, pady=10)
+#helpButton = ctk.CTkButton(buttonsFrame, text="Help & FAQs", fg_color="transparent", text_color="black", hover_color="#D9EDFF", font=("Georgia", 15, "italic", "underline", "bold"))
+#helpButton.pack(side="left", expand=True, padx=10, pady=10)
 
 # Main frame ----------------------------------------------------------------------------
 pageFrame = ctk.CTkFrame(app)
