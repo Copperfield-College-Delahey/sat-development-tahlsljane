@@ -13,6 +13,7 @@ class LifelinesPage(ctk.CTkFrame):
     def __init__(self, parent, controller=None): 
         super().__init__(parent, fg_color="#EDF5FB") 
 
+        # Page content ---------------------------------------------------------------------------------
         mainFrame = ctk.CTkFrame(self, fg_color="#E9F5FF") 
         mainFrame.pack(padx=20, pady=50)
         lifelinesTitle = ctk.CTkLabel(mainFrame, text="Lifelines", text_color="#0D2B50", font=("Georgia", 24, "bold", "underline", "italic"))
