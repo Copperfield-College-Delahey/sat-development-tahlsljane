@@ -39,6 +39,7 @@ class JournalPage(ctk.CTkFrame):
                 file.write(f"{datetime.now()}:\n{content}\n\n")
             self.journalEntry.delete("1.0", "end")
 
+
     # Reloading the user's most recently saved entry
     def reload_entry(self):
         try:

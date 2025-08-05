@@ -7,7 +7,9 @@ happyText = (
     "I'm glad you feel that way! Here's how you can stay happy: \n"
     "• Go for a walk once a day \n"
     "• Stay hydrated \n"
-    "• Sleep at a reasonable time (if possible)"
+    "• Sleep at a reasonable time (if possible) \n"
+    "• Do something fun everyday \n"
+    "• Take photos of things that make you smile and revisit them \n"
 )
 
 sadText = (
@@ -15,6 +17,11 @@ sadText = (
     "• Exercise daily \n"
     "• Participate in meditation \n"
     "• Take a brief break from your screen every 30 minutes \n"
+    "• Listen to your favourite songs \n"
+    "• Watch your favourite movie/tv show \n"
+    "• Limit your social media use \n"
+    "• Take a nap \n"
+    "• Eat something nourishing!"
 )
 
 angryText = (
@@ -22,6 +29,10 @@ angryText = (
     "• Practice deep breathing during those moments \n"
     "• Change the scenery in which you're surrounded by \n"
     "• Identify solutions that could be used to fix this problem \n"
+    "• Write all your feelings in a letter then destroy it \n"
+    "• Go for a brisk walk or run \n"
+    "• Clean something small \n"
+    "• Use a stress ball or fidget tool"
 )
 
 frustratedText = (
@@ -29,6 +40,10 @@ frustratedText = (
     "• Express yourself by talking to someone \n"
     "• Challenge your negative thoughts \n"
     "• Try and prioritize sleep \n"
+    "• Do something repetitive \n"
+    "• Safely yell it out \n"
+    "• Draw it out \n"
+    "• Stretch out your body"
 )
 
 stressedText = (
@@ -36,6 +51,12 @@ stressedText = (
     "• Create a schedule; lines out what needs to be done and when \n"
     "• Briefly engage in enjoyable activities \n"
     "• Maintain a healthy diet \n"
+    "• Call or text a friend \n"
+    "• Limit caffeine and sugar consumption \n"
+    "• Spend some time outside \n"
+    "• Set realistic expectations \n"
+    "• Chew gum \n"
+    "• Splash cold water on your face"
 )
 
 class StrategiesPage(ctk.CTkFrame):
