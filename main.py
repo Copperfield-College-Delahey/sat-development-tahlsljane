@@ -9,7 +9,7 @@ from meditationPage import MeditationPage
 
 # Setup ----------------------------------------------------------------------------
 app = ctk.CTk()
-app.title("my app")
+app.title("StudHealth")
 app.geometry("1000x700")
 app.configure(fg_color="#E9F5FF")
 

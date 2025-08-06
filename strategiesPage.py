@@ -116,5 +116,5 @@ class StrategiesPage(ctk.CTkFrame):
 
         # Text to show strategies based on the mood selected 
         strategiesText = ctk.CTkLabel(strategiesFrame, text="", text_color="black", font=("Georgia", 15), justify="center")
-        strategiesText.grid(row=0, column=1, columnspan=2, rowspan=11)
+        strategiesText.grid(row=12, column=0, columnspan=2)
 
